@@ -29,7 +29,12 @@ int __fastcall InitiateConnection_hook(
         int a8,
         char* enckey,
         int enckeysize){
-	return ogInitConn(thisptr, 0, a2,a3,netlong,a5,a6,a7,a8,enckey,enckeysize)-8;
+	int len = ogInitConn(thisptr, 0, a2,a3,netlong,a5,a6,a7,a8,enckey,enckeysize);
+	if (len == 60) {
+		return len;
+	} else {
+		return len-8;
+	}
 }
 
 

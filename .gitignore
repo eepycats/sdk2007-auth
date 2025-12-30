@@ -1,0 +1,4 @@
+.xmake/
+build/
+dist/addons/steamhook.dll
+vendor/minhook
